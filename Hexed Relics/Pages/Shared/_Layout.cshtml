@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Intuition_Hexed_Relics.styles.css" asp-append-version="true" />
+    <link rel="shortcut icon" type="image/svg" href="https://i.imgur.com/1kJDuSM.png" />
+    <link rel="icon" type="image/svg" href="https://i.imgur.com/1kJDuSM.png" />
+    @*<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css"/>*@
+    @*<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4-4.6.0/jq-3.6.0/dt-1.11.4/b-2.2.2/fc-4.0.2/sc-2.0.5/sb-1.3.1/sp-1.4.0/sl-1.3.4/datatables.min.css"/>*@
+</head>
+<body>
+    <div class="menu" onclick="this.classList.toggle('open')">
+        @if(User.Identity.IsAuthenticated && User.HasClaim("User", "true"))
+        {
+              <div class="button" onclick="redirectToPage('main')"></div>
+              <div class="button" onclick="redirectToPage('partners')"></div>
+              <div class="button" onclick="redirectToPage('stocks')"></div>
+              <div class="button" onclick="redirectToPage('home')"></div>
+        }
+        else
+        {
+             <div class="button" onclick="redirectToPage('login')"></div>
+             <div class="button" onclick="redirectToPage('home')"></div>
+        }
+    </div>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+   @* <script type="text/javascript" src="https://cdn.datatables.net/v/bs4-4.6.0/jq-3.6.0/dt-1.11.4/b-2.2.2/fc-4.0.2/sc-2.0.5/sb-1.3.1/sp-1.4.0/sl-1.3.4/datatables.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>*@
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

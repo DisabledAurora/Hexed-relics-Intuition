@@ -1,0 +1,44 @@
+﻿@page
+@model Hexed_Relics.Pages.StocksModel
+@{
+    ViewData["Title"] = "Stonks";
+}
+
+<div class=" container col-9 mt-3" align="center">
+    <h1>Stocks Page</h1>
+</div>
+<div class="row">
+    <div class="container col-9" align="center">
+            <div class="centerX" style="text-align: center;">
+        <div>
+            <div class="imgWrap MMM" style="perspective:150px;">
+                <div class="left"></div>
+                <div class="center"></div>
+                <div class="right"></div>
+            </div>
+        </div>
+
+        <br />
+        <br />
+            Enter Your desired stock's code and enter to view stock graph
+            <br />
+            For available Stocks, please go to this webpage and view
+            <br />
+            <br />
+            <div class="frame">
+                <form action="StocksAvailable">
+                <button type="submit" class="btn btn-primary" align="center">Available Stocks</button>
+            </form>
+            <br />
+            Stock Code
+            <br />
+            <form action="Graph" method="get">
+            <input type="text" name="Code" />
+            <br />
+            <br />
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+            </div>
+            </div>
+    </div>
+</div>

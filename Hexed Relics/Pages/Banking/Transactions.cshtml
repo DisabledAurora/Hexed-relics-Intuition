@@ -1,0 +1,108 @@
+﻿@page
+@model Hexed_Relics.Pages.Banking.TransactionsModel
+@{
+    ViewData["Title"] = "Transactions";
+}
+
+@if (Model.Message != "")
+{
+    <div class="container col-lg-9  col-md-12 mt-5 align-content-center">
+        <div class="alert alert-danger mt-5" style="border-radius: 20px;">
+            <div class="row">
+                <div class="container col-3 " align="center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+                        <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                    </svg>
+                </div>
+                <div class="container col-9">
+                    <strong>@Model.Message</strong>
+                </div>
+            </div>
+       </div>
+    </div>
+}
+
+<div class="container col-lg-8 col-md-10">
+    <div class="row">
+        <h1 align="center">All Transactions Linked to Current Account</h1>
+        <hr />
+    </div>
+    <div class="row mt-4">
+            <table class="table table-bordered text-center" style="border-color:#b7d7e8; border-radius:30px">
+                <thead>
+                    <tr style="background-color:#87bdd8">
+                        <th scope="col">No.</th>
+                        <th scope="col">Transaction Amount</th>
+                        <th scope="col">Date of Transaction</th>
+                        <th scope="col">Transaction Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for(int i=0;i<Model.UserTransactions.Count;i++)
+                    {
+                        if(i % 2 == 0)
+                        {
+                            <tr style="background-color:#b7d7e8">
+                                <th scope="row">@(i+1)</th>
+                                <td>@Model.UserTransactions[i].Amount</td>
+                                <td>@Model.UserTransactions[i].DtTst.Value.ToString("dd/MM/yyyy")</td>
+                                @if (Model.UserTransactions[i].IsDeposit == false)
+                                {
+                                    <td>Withdrawal</td>
+                                }
+                                else
+                                {
+                                    <td>Deposit</td>
+                                }
+                            </tr>
+                        }
+                        else
+                        {
+                            <tr style="background-color:#87bdd8">
+                                <th scope="row">@(i+1)</th>
+                                <td>@Model.UserTransactions[i].Amount</td>
+                                <td>@Model.UserTransactions[i].DtTst.Value.ToString("dd/MM/yyyy")</td>
+                                @if (Model.UserTransactions[i].IsDeposit == false)
+                                {
+                                    <td>Withdrawal</td>
+                                }
+                                else
+                                {
+                                    <td>Deposit</td>
+                                }
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <form method="post">
+            <div class="row mt-5">
+                <h5 align="center">Find transactions between a date range</h5>
+                <div class="col-lg-6 mt-3">
+                    <label class="control-label" asp-for="Date2">Pick the first date</label>
+                    <input class=" form-control rounded-md" type="date" asp-for="Date1" value="@DateTime.Now.Date"/>
+                    <span asp-validation-for="Date1" class="text-danger"></span>
+                </div>
+                <div class="col-lg-6 mt-3">
+                    <label class="control-label" asp-for="Date2">Pick the second date</label>
+                    <input class=" form-control rounded-md " type="date" asp-for="Date2" value="@DateTime.Now.Date"/>
+                    <span asp-validation-for="Date1" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row mt-5 " align="center">
+                <div class="col4">
+                    <button type="submit" class="btn btn-lg hovercolor" style="background-color:#6610f2; color:white; width:100px">Filter</button>
+                </div>
+            </div>
+        </form>
+</div>
+
+<style>
+    button.hovercolor:hover{
+        -moz-box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.3);
+        -webkit-box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.3);
+        box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.3);
+    }
+</style>

@@ -1,0 +1,111 @@
+﻿@page "/register"
+@model Hexed_Relics.Pages.CreateBankAccountModel
+@{
+}
+
+@if (Model.Message != "" || !Html.ViewData.ModelState.IsValid)
+{
+    <div class="container col-lg-9  col-md-12 mt-5 align-content-center">
+        <div class="alert alert-danger mt-5" style="border-radius: 20px;">
+            <div class="row">
+                <div class="container col-3 " align="center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+                        <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                    </svg>
+                </div>
+                <div class="container col-9" asp-validation-summary="ModelOnly" role="alert">
+                    <strong>@Model.Message</strong>
+                </div>
+            </div>
+       </div>
+    </div>
+}
+
+<div class="container col-lg-10  col-md-12 mt-5">
+    <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-12 col-xl-11">
+        <div class="card text-black" style="background:#aecef2; border-radius: 25px;">
+            <div class="card-body p-md-5">
+            <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-7 col-xl-7 order-2 order-lg-1">
+
+                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Register New Bank Account</p>
+
+                <form class="mx-1 mx-md-4" method="post">
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                            <label class="form-label" for="name">Enter Full Name</label>
+                            <input type="text" id="name" class="form-control" asp-for="NewUser.FullName"/>
+                        </div>
+                    </div>
+
+                   <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                            <label class="form-label" for="address">Enter House Address</label>
+                            <input type="text" id="address" class="form-control" asp-for="NewUser.Address"/>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                            <label class="form-label" for="un">Enter Username</label>
+                            <input type="text" id="un" class="form-control" asp-for="NewUser.UserName"/>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                            <label class="form-label" for="email">Enter Email</label>
+                            <input type="email" id="email" class="form-control" asp-for="NewUser.Email"/>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                            <label class="form-label" for="pwd">Enter Password</label>
+                            <input type="password" id="pwd" class="form-control" asp-for="NewUser.Password"/>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                            <label class="form-label" for="cno">Enter Contact Number</label>
+                            <input type="text" id="cno" class="form-control" asp-for="NewUser.ContactNumber"/>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                            <label class="form-label" for="deposit">Enter First Deposit Amount</label>
+                            <input type="number" id="deposit" class="form-control" asp-for="Deposit"/>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                        <button type="submit" class="btn btn-primary btn-lg">Register</button>
+                    </div>
+                </form>
+
+                </div>
+                <div class="col-md-10 col-lg-5 col-xl-5 d-flex align-items-center order-1 order-lg-2">
+                <img src="~/images/online-banking.png" class="img-fluid" alt="Sample image">
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+
+

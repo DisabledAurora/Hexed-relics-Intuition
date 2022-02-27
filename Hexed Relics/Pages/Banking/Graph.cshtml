@@ -1,0 +1,24 @@
+﻿@page
+@model Hexed_Relics.Pages.Banking.GraphModel
+
+
+<h1 class="HCenterP" style="font: 16px;">Stock Graph</h1>
+@if(Model.Y.Average() > Model.Y[1])
+{
+    <div class="center" style="width: 30%">
+                Stock has increased in value on average across the timespan, have the higher possibility of decreasing in the near future, averaging out at @Model.Y.Average() USD, from current closing value (@Model.X[Model.X.Length-1]) of @Model.Y[Model.Y.Length-1] USD
+        <br />
+        To return back, please press the button on the top left corner and navigate
+    </div>
+}
+
+
+
+@if(Model.Y.Average() < Model.Y[1])
+{
+    <div style="width: 30%" class="center">
+                Stock has decreased in value on average across the timespan, have the higher possibility of increasing in the near future, averaging out at @Model.Y.Average() USD, from current closing value (@Model.X[Model.X.Length-1]) of @Model.Y[Model.Y.Length-1] USD
+        <br />
+        To return back, please press the button on the top left corner and navigate
+    </div>
+}

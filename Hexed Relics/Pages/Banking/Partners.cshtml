@@ -1,0 +1,150 @@
+﻿@page
+@model Hexed_Relics.Pages.PartnersModel
+@{
+}
+
+<style>
+/* SIBLING FADE: fade out siblings around a hovered item */
+
+.sibling-fade { visibility: hidden; }
+/* Prevents :hover from triggering in the gaps between items */
+
+.sibling-fade > * { visibility: visible; }
+/* Brings the child items back in, even though the parent is `hidden` */
+
+.sibling-fade > * { transition: opacity 150ms linear 100ms, transform 150ms ease 100ms; }
+/* Makes the fades smooth with a slight delay to prevent jumps as the mouse moves between items */
+
+.sibling-fade:hover > * { opacity: 0.4; transform: scale(0.9); }
+/* Fade out all items when the parent is hovered */
+
+.sibling-fade > *:hover { opacity: 1; transform: scale(1); transition-delay: 0ms, 0ms; }
+/* Fade in the currently hovered item */
+
+/* Presentational Styles */
+html { display: flex; height: 100%;}
+body { 
+  background-color: #e8e8f3;
+background-image: linear-gradient(135deg, #e8e8f3 40%, #0d324d 94%);
+
+  padding: 10px;
+  max-width: 100em;
+  margin: auto;
+}
+
+.sibling-fade {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sibling-fade > * {
+  background: #e2e2ed;
+  padding: 1em;
+  flex: auto;
+  margin: 0.3em;
+  text-align: center;
+  color: #869aa7;
+  font-size: 1.5em;
+  text-decoration: none;
+}
+
+/**/
+</style>
+<h1 class="HcenterP" style="text-align:center;">
+    Partnering Banks
+</h1>
+<div class="sibling-fade">
+  <a href="http://www.icbc-ltd.com/icbcltd/en/">Industrial & Commercial Bank of China</a>
+  <a href="https://www.mufg.jp/english/index.html">Mitsubishi UFJ Financial Group</a>
+  <a href="https://www.jpmorganchase.com/">JPMorgan Chase & Co</a>
+  <a href="https://www.hsbc.com/">HSBC Holdings</a>
+  <a href="https://group.bnpparibas/en/">BNP Paribas</a>
+  <a href="https://www.bankofamerica.com/">Bank of America</a>
+  <a href="https://www.credit-agricole.com/en">Credit Agricole Group</a>
+  <a href="https://www.wellsfargo.com/">Wells Fargo</a>
+  <a href="https://www.jp-bank.japanpost.jp/en_index.html">Japan Post Bank</a>
+  <a href="https://www.citigroup.com/citi/">Citigroup Inc</a>
+  <a href="https://www.smfg.co.jp/english/">Sumitomo Mitsui Financial Group</a>
+  <a href="https://www.db.com/index?language_id=1&kid=sl.redirect-en.shortcut">Deutsche Bank</a>
+  <a href="https://www.santander.com/en/home">Banco Santander</a>
+  <a href="https://www.cib.barclays/contact-us/sg.html">Barclays PLC</a>
+  <a href="https://www.societegenerale.com/en">Societe Generale</a>
+  <a href="https://www.lloydsbankinggroup.com/">Lloyds Banking Group</a>
+  <a href="https://www.rbcroyalbank.com/personal.html">Royal Bank of Canada</a>
+  <a href="https://www.ing.com/Home.htm">ING Groep NV</a>
+  <a href="https://www.td.com/ca/en/personal-banking/">Toronto-Dominion Bank</a>
+  <a href="https://www.nochubank.or.jp/en/">Norinchukin Bank</a>
+  <a href="https://www.unicreditgroup.eu/en.html">UniCredit S.p.A.</a>
+  <a href="https://www.rbs.co.uk/">Royal Bank of Scotland Group</a>
+  <a href="https://www.intesasanpaolo.com/">Intesa Sanpaolo</a>
+  <a href="https://www.creditmutuel.fr/home/index.html">Credit Mutuel</a>
+  <a href="https://www.ubs.com/global/en/our-firm/governance/ubs-group-ag.html">UBS Group AG</a>
+  <a href="https://www.goldmansachs.com/">Goldman Sachs Group</a>
+  <a href="https://www.morganstanley.com/">Morgan Stanley</a>
+  <a href="https://www.bbva.com/en/">BBVA</a>
+  <a href="https://www.credit-suisse.com/sg/en.html">Credit Suisse Group</a>
+  <a href="https://www.scotiabank.com/global/en/global-site.html">Bank of Nova Scotia</a>
+  <a href="https://www.commbank.com.au/">Commonwealth Bank of Australia</a>
+  <a href="https://www.rabobank.com/en/home/index.html">Rabobank Group</a>
+  <a href="https://www.anz.com.au/about-us/">Australia & New Zealand Banking Group</a>
+  <a href="https://www.nordea.com/en">Nordea</a>
+  <a href="https://www.eib.org/en/index.htm">European Investment Bank</a>
+  <a href="https://www.westpac.com.au/">Westpac Banking Corp</a>
+  <a href="https://www.sc.com/en/">Standard Chartered Plc</a>
+  <a href="https://www.nab.com.au/">National Australia Bank</a>
+  <a href="https://www.dzbank.com/">DZ Bank AG</a>
+  <a href="https://www.bmo.com/main/personal">Bank of Montreal</a>
+  <a href="https://www.smth.jp/en/">Sumitomo Mitsui Trust Holdings</a>
+  <a href="https://danskebank.com/">Danske Bank</a>
+  <a href="https://www.kfw.de/kfw.de-2.html">KfW Group</a>
+  <a href="https://www.commerzbank.com/">Commerzbank</a>
+  <a href="https://www.onlinesbi.com/">State Bank of India</a>
+  <a href="https://www.cdp.it/sitointernet/en/homepage.page">Cassa Depositi e Prestiti (CDP)</a>
+  <a href="https://www.cibc.com/en/personal-banking.html">Canadian Imperial Bank of Commerce</a>
+  <a href="https://www.abnamro.com/en/home">ABN AMRO Group NV</a>
+  <a href="https://www.sberbank.ru/en/individualclients">Sberbank of Russia</a>
+  <a href="https://www.usbank.com/index.html">U.S. Bancorp</a>
+  <a href="https://www.caixabank.com/en/home_en.html">CaixaBank</a>
+  <a href="https://www.itau.com.br/relacoes-com-investidores/default.aspx?linguagem=en">Itau Unibanco Holding SA</a>
+  <a href="https://www.resona-gr.co.jp/holdings/english/">Resona Holdings</a>
+  <a href="https://m.kbfg.com/Eng/index.jsp">KB Financial Group</a>
+  <a href="https://www.nomura.com/">Nomura Holdings</a>
+  <a href="https://www.dbs.com.sg/index/default.page">DBS Group Holdings</a>
+  <a href="https://www.pnc.com/en/about-pnc.html">PNC Financial Services Group</a>
+  <a href="https://www.bnymellon.com/">Bank of New York Mellon Corp</a>
+
+</div>
+<br />
+<br />
+<h1 style="text-align:center;">
+    Partnering Companies
+</h1>
+<div class="sibling-fade">
+  <a href="https://www.amazon.sg/">Amazon</a>
+  <a href="https://linde.com">Linde</a>
+  <a href="https://www.tesla.com/en_sg">Tesla</a>
+  <a href="https://www.alibaba.com/">Alibaba</a>
+  <a href="https://www.lvmh.com/">LVMH Moët Hennessy</a>
+  <a href="https://thewaltdisneycompany.com/">Walt Disney Co</a>
+  <a href="https://global.toyota/en/">Toyota Motor</a>
+  <a href="https://www.netflix.com/sg/">Netflix</a>
+  <a href="https://www.loreal.com/en/">L'Oréal</a>
+  <a href="https://www.nike.com/sg/">Nike</a>
+  <a href="https://www.mcdelivery.com.sg/sg/">McDonalds</a>
+  <a href="https://www.volkswagenag.com/">Volkswagen AG</a>
+  <a href="https://www.costco.com/">Costco Wholesale</a>
+  <a href="https://corporate.lowes.com/">Lowe's Companies</a>
+  <a href="https://www.sony.net/">Sony Group</a>
+  <a href="https://www.starbucks.com.sg/">Starbucks</a>
+  <a href="https://www.jnj.com/">Johnson & Johnson</a>
+  <a href="https://www.unitedhealthgroup.com/">UnitedHealth Group</a>
+  <a href="https://www.roche.com/">Roche Holdings</a>
+  <a href="https://www.boeing.com/">Boeing</a>
+  <a href="https://abc.xyz/">Alphabet</a>
+  <a href="https://www.nvidia.com/en-sg/">Nvidia</a>
+  <a href="https://www.intel.sg/content/www/xa/en/homepage.html">Intel</a>
+  <a href="https://www.adobe.com/sg/">Adobe</a>
+  <a href="https://www.oracle.com/sg/index.html">oracle</a>
+  <a href="https://corporate.comcast.com/">Comcast</a>
+
+</div>

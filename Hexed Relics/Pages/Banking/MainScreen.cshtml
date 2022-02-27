@@ -1,0 +1,101 @@
+﻿@page
+@model Hexed_Relics.Pages.MainScreenModel
+@{
+    ViewData["Title"] = "Account";
+}
+
+<head>
+   <link href="~/css/bankingmain.css" rel="stylesheet" />
+</head>
+
+<div class="container col-9 mt-4">
+    <div class="row align-content-center">
+        @if(DateTime.Now.Hour>=4 && DateTime.Now.Hour < 12)
+        {
+            <h1 align="center" class="mb-3">Good Morning, @Model.LoggedInUser.FullName</h1>
+        }
+        else if(DateTime.Now.Hour >=12 && DateTime.Now.Hour < 17)
+        {
+             <h1 align="center" class="mb-3">Good Afternoon, @Model.LoggedInUser.FullName</h1>
+        }
+        else if(DateTime.Now.Hour >=17 && DateTime.Now.Hour <= 20)
+        {
+             <h1 align="center" class="mb-3">Good Evening, @Model.LoggedInUser.FullName</h1>
+        }
+        else
+        {
+             <h1 align="center" class="mb-3">Good Night, @Model.LoggedInUser.FullName</h1>
+        }
+        <div class="col-xl-4 col-md-6 mb-4" align="center">
+            <div class="card border-left-primary shadow h-100 py-2" style="cursor:default">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-purple text-uppercase mb-1">
+                                Account Number & Balance</div>
+                            <div class="h6 mb-0 font-weight-normal text-gray-800">Account No.: @Model.LoggedInUser.AccountNumber</div>
+                            <div class="h6 mb-0 font-weight-normal text-gray-800">Balance: $@Model.LoggedInUser.TotalBalance.ToString()</div>
+                        </div>
+                        <div class="col-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-coin" viewBox="0 0 16 16">
+                              <path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932 0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853 0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9H5.5zm2.177-2.166c-.59-.137-.91-.416-.91-.836 0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91 0 .542-.412.914-1.135.982V8.518l.087.02z"/>
+                              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                              <path d="M8 13.5a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11zm0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       <div class="col-xl-4 col-md-6 mb-4" align="center">
+            <div class="card border-left-primary shadow h-100 py-2" style="cursor:pointer" onclick="redirectToPage('transaction')">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-purple text-uppercase mb-1">
+                                View All Transactions</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">Click to view all transactions</div>
+                        </div>
+                        <div class="col-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="64" height="64">
+                                <path d="M32 176h370.8l-57.38 57.38c-12.5 12.5-12.5 32.75 0 45.25C351.6 284.9 359.8 288 368 288s16.38-3.125 22.62-9.375l112-112c12.5-12.5 12.5-32.75 0-45.25l-112-112c-12.5-12.5-32.75-12.5-45.25 0s-12.5 32.75 0 45.25L402.8 112H32c-17.69 0-32 14.31-32 32S14.31 176 32 176zM480 336H109.3l57.38-57.38c12.5-12.5 12.5-32.75 0-45.25s-32.75-12.5-45.25 0l-112 112c-12.5 12.5-12.5 32.75 0 45.25l112 112C127.6 508.9 135.8 512 144 512s16.38-3.125 22.62-9.375c12.5-12.5 12.5-32.75 0-45.25L109.3 400H480c17.69 0 32-14.31 32-32S497.7 336 480 336z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-4 col-md-6 mb-4" align="center">
+            <div class="card border-left-primary shadow h-100 py-2" style="cursor:pointer" onclick="redirectToPage('stocks')">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-purple text-uppercase mb-1">
+                                Investments</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">Click to view Stocks</div>
+                        </div>
+                        <div class="col-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-graph-up-arrow" viewBox="0 0 16 16">
+                              <path fill-rule="evenodd" d="M0 0h1v15h15v1H0V0Zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5Z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div> 
+      <div></div>
+      <div></div>
+      <div></div>
+      <div class="container col-xl-3 col-md-8 d-flex flex-column ">
+        <p style="font-size:large">Select an option below: </p>
+          <div class="row align-content-center mt-1">
+            <a class="btn btn-lg mb-4 link" asp-page="/Banking/Deposits">Deposit</a>
+            <a class="btn btn-lg mb-4 link" asp-page="/Banking/Withdrawal">Withdraw | Transfer</a>
+            <a class="btn btn-lg mb-4 link" asp-page="/Banking/Stocks">Stocks</a>
+          </div>
+      </div>
+</div>
+

@@ -1,0 +1,34 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+
+<div class="HCenterP container col-lg-5 col-md-8 col-sm-5" align="center">
+    <h1 align="center">Welcome to Sigma Banking!</h1><br />
+        @if (!User.Identity.IsAuthenticated)
+        {
+            <div class="row mb-3"><a asp-page="Auth/Login" class="btn btn-primary">Login</a></div>
+            <div class="row mb-3">
+                <div class="col-6 d-flex flex-column">
+                    <a asp-page="Auth/CreateBankAccount" class="btn btn-info">Register</a>
+                </div>
+                <div class="col-6 d-flex flex-column">
+                    <a asp-page="/ScamPreventionTips" class="btn btn-info">Scam Prevention</a>
+                </div>
+            </div>
+        }
+        else
+        {
+            <form method="post">
+                <div class="row mb-3 mb-3"><button class="btn btn-danger" type="submit">Log Out</button></div>
+            </form>
+            <div class="row">
+               <a asp-page="/ScamPreventionTips" class="btn btn-info">Scam Prevention</a>
+            </div>
+        }
+        <br /><br />
+        <img src="~/Images/digitalbanking_bg.gif" width="300" height="300"/>
+</div>

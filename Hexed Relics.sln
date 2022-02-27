@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32210.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hexed Relics", "Hexed Relics\Hexed Relics.csproj", "{B4C2718F-236F-4F14-9ECD-4301C7985FC5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B4C2718F-236F-4F14-9ECD-4301C7985FC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4C2718F-236F-4F14-9ECD-4301C7985FC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4C2718F-236F-4F14-9ECD-4301C7985FC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4C2718F-236F-4F14-9ECD-4301C7985FC5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2568B16F-AD11-4B0F-AE3F-4383AC3FB60B}
+	EndGlobalSection
+EndGlobal
